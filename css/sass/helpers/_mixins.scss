@@ -1,0 +1,430 @@
+@mixin reset {
+    direction: $direction;
+    text-align: $right;
+    margin: $zero;
+    padding: $zero;
+    border: $zero;
+    text-decoration: $none;
+    list-style: $none;
+    color: $colortext;
+    font: normal 400 15px/28px "Readex Pro", sans-serif;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin overlay {
+    content: '';
+    @include position(absolute, $top: 0, $left: 0, $right: auto, $bottom: auto);
+    width: $fullwidth;
+    height: $fullwidth;
+}
+
+@mixin section {
+    position: relative;
+    width: $fullwidth;
+    padding: $com-spacing-8 $zero;
+    overflow: hidden;
+    @media (max-width: 999px) {
+        padding: $com-spacing-6 $zero;
+    }
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    -moz-transform: rotate($degrees);
+    -ms-transform: rotate($degrees);
+    -o-transform: rotate($degrees);
+    transform: rotate($degrees);
+}
+
+@mixin scale($degscale) {
+    -webkit-transform: scale($degscale);
+    -moz-transform: scale($degscale);
+    -ms-transform: scale($degscale);
+    -o-transform: scale($degscale);
+    transform: scale($degscale);
+}
+
+@mixin bottom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    color: $orange;
+    outline: $none;
+    outline-style: $none;
+    border: $zero;
+    text-align: center;
+    background: $white;
+    border: 1px solid $orange;
+    border-radius: 12px;
+    @include transition(all 0.5s ease-in-out 0s);
+    cursor: pointer;
+    padding: 5px $com-spacing-3;
+    @media (max-width: 999px) {}
+    &:hover {
+        background: $orange;
+        color: $white;
+        svg {
+            fill: $white;
+        }
+    }
+    &:focus {
+        outline: $none;
+        outline-style: $none;
+    }
+    svg {
+        min-width: 22px;
+        max-width: 22px;
+        fill: $orange;
+        @include transition(all 0.5s ease-in-out 0s);
+    }
+}
+
+@mixin prefixer ($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property}: $value;
+    }
+    #{$property}: $value;
+}
+
+@mixin keyFrame ($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin social {
+    @include flex;
+    direction: ltr;
+    a {
+        position: relative;
+        margin-right: $com-spacing-4;
+        @include transition(all 0.5s ease-in-out 0s);
+        svg {
+            fill: $white;
+            width: 20px;
+            height: 20px;
+            @include transition(all 0.5s ease-in-out 0s);
+        }
+        &:hover {
+            opacity: 0.7;
+        }
+        @each $type in $social {
+            &.icon-#{nth($type, 1)} {}
+        }
+    }
+}
+
+@mixin social-shear {
+    display: flex;
+    direction: ltr;
+    a {
+        @include flex;
+        width: 38px;
+        height: 38px;
+        margin: $zero $com-spacing-1;
+        @include transition(all 0.5s ease-in-out 0s);
+        svg {
+            fill: $white;
+            width: 22px;
+            height: 22px;
+            @include transition(all 0.5s ease-in-out 0s);
+        }
+        @each $type in $social {
+            &.icon-#{nth($type, 1)} {
+                background: nth($type, 2);
+                &:hover {
+                    background: $ofwhite;
+                    svg {
+                        fill: nth($type, 2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin input {
+    height: 48px;
+    text-transform: $none;
+    font-weight: 300;
+    @include transition(all 0.5s ease-in-out 0s);
+    &:focus,
+    &:hover,
+    &:focus-visible {
+        border: 1px solid $orange;
+        outline: 0;
+        outline-style: $none;
+        box-shadow: none;
+    }
+}
+
+@mixin title {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $blak;
+    @include position(relative);
+    @media (max-width: 999px) {
+        font-size: 22px;
+    }
+}
+
+@mixin hyprlink {
+    display: block;
+    @include position(relative);
+    margin: $zero $com-spacing-2;
+    color: $white;
+    @include transition(all 0.5s ease-in-out 0s);
+    &:hover {
+        color: $orange;
+    }
+}
+
+@mixin map-back {
+    @include flex;
+    position: relative;
+    height: 366px;
+    background: $dark;
+    padding: $zero !important;
+    @media (max-width: 999px) {
+        height: 266px;
+    }
+    img {
+        position: absolute;
+        left: $zero;
+        top: $zero;
+        width: $fullwidth;
+        height: $fullwidth;
+        object-fit: cover;
+    }
+    &:before {
+        @include overlay;
+        background: linear-gradient(180deg, #03045e85 0%, #0a0b3c94 100%);
+        z-index: 1;
+    }
+    .container {
+        text-align: center;
+        z-index: 10;
+    }
+    .title {
+        color: $white;
+        text-align: center;
+        font-size: 32px;
+        @media (max-width: 999px) {
+            font-size: 26px;
+        }
+    }
+    .bottom {
+        min-width: 140px;
+        min-height: 48px;
+        background: $orange;
+        color: $white;
+        margin-top: $com-spacing-3;
+    }
+}
+
+@mixin maplink {
+    display: flex;
+    justify-content: center;
+    margin-top: $com-spacing-3;
+    li {
+        display: $inline;
+        color: #d1d1d1;
+        font-weight: 300;
+        margin-left: $com-spacing-2;
+        @include transition(all 0.5s ease-in-out 0s);
+        &:last-child {
+            margin-left: $zero;
+        }
+        a {
+            color: $white;
+            position: relative;
+            font-weight: 300;
+            padding-left: $com-spacing-3;
+            @include transition(all 0.5s ease-in-out 0s);
+            &:hover {
+                color: $orange;
+            }
+            &:before {
+                @include position(absolute, $top: -3px, $left: 2px);
+                content: "|";
+                display: $inline;
+                color: $white;
+            }
+        }
+    }
+}
+
+@mixin styleslider {
+    @include position(relative);
+    direction: ltr;
+    .slick-list {
+        @include position(relative);
+        display: $block;
+        overflow: hidden;
+        outline: $none;
+        margin: $zero -4px;
+        .slick-track {
+            @include position(relative, $top: 0, $left: auto, $right: auto, $bottom: auto);
+            display: $block;
+            overflow: hidden;
+            &:after,
+            &:before {
+                display: table;
+                content: '';
+            }
+        } /// End .slick-track
+    } /// End .Slick-list
+    .slick-prev,
+    .slick-next {
+        @include flex;
+        @include position(absolute, $top: 50%);
+        cursor: pointer;
+        border: $zero;
+        padding: $zero;
+        width: 30px;
+        height: 30px;
+        outline: $none;
+        font-size: $zero;
+        background: $none;
+        border-radius: 50%;
+        @include transition(all 0.5s ease-in-out 0s);
+        svg {
+            width: 18px;
+            height: 18px;
+            fill: $blue;
+            @include transition(all 0.5s ease-in-out 0s);
+        }
+        // &:hover {
+        //     svg {
+        //         fill: $blue;
+        //     }
+        // }
+    }
+    .slick-next {
+        right: $zero;
+    }
+    .slick-prev {
+        left: $zero;
+    }
+    .slick-dots {
+        @include flex;
+        margin-top: $com-spacing-6;
+        li {
+            @include position(relative);
+            display: $inline;
+            margin: $zero 2px;
+            padding: $zero;
+            cursor: pointer;
+            width: 14px;
+            height: 4px;
+            border-radius: 5px;
+            button {
+                font-size: $zero;
+                line-height: $zero;
+                display: $block;
+                width: $fullwidth;
+                height: $fullwidth;
+                border: $zero;
+                outline: $none;
+                background: #cdc8c5;
+                padding: $zero;
+            }
+        }
+        li.slick-active {
+            background: $orange;
+            button {
+                background: $none;
+            }
+        }
+    }
+}
+
+@mixin check-box {
+    position: relative;
+    cursor: pointer;
+    font-weight: 300;
+    padding-right: 22px;
+    input[type="checkbox"],
+    input[type="radio"] {
+        @include position(absolute, $left: 9000px);
+    }
+    input[type="checkbox"]+.label-text:before,
+    input[type="radio"]+.label-text:before {
+        content: ' ';
+        border: 1px solid #D9D9D9;
+        background: #D9D9D9;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        z-index: 1;
+        top: 7px;
+        right: 0;
+        border-radius: 4px;
+    }
+    input[type="radio"]+.label-text:before {
+        @include border-radius(50%);
+    }
+    input[type="radio"]:checked+.label-text:before {
+        background: $blue;
+        box-shadow: inset 0 0 0px 4px $white;
+    }
+    input[type="checkbox"]:checked+.label-text:before {
+        background: $blue url(../images/tick.svg) no-repeat center center;
+        border: 1px solid $blue;
+    }
+    span.label-text {
+        font-weight: 300;
+        color: $blak;
+        @include transition(all 0.5s ease-in-out 0s);
+        @media (max-width: 991px) {}
+    }
+    // @keyframes effect {
+    //     0% {
+    //         transform: scale(0);
+    //     }
+    //     25% {
+    //         transform: scale(1.3);
+    //     }
+    //     75% {
+    //         transform: scale(1.4);
+    //     }
+    //     100% {
+    //         transform: scale(1);
+    //     }
+    // }
+}

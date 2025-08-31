@@ -1,0 +1,313 @@
+.governorates__item {
+    padding: $com-spacing-6 $zero !important;
+    background: $ofwhite;
+    nav {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: $com-spacing-4;
+        @media (max-width: 999px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media (max-width: 767px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        a {
+            display: block;
+            background: $white;
+            border-radius: 12px;
+            padding: $com-spacing-6;
+            text-align: center;
+            border: 1px solid #ff760b38;
+            @include transition(all 0.5s ease-in-out 0s);
+            @media (max-width: 767px) {
+                padding: $com-spacing-3;
+            }
+            &:hover {
+                border: 1px solid $orange;
+            }
+            img {
+                max-width: 78px;
+                height: 78px;
+            }
+            p {
+                text-align: center;
+                margin-top: $com-spacing-3;
+                color: $blak;
+            }
+        }
+    }
+}
+
+.slider-news__item {
+    @media (max-width: 999px) {}
+    .rowbox {
+        display: grid;
+        grid-template-columns: 3fr 310px 310px;
+        gap: $com-spacing-4;
+        @media (max-width: 1199px) {
+            grid-template-columns: 3fr 280px 280px;
+        }
+        @media (max-width: 999px) {
+            grid-template-columns: 1fr;
+            gap: $zero;
+        }
+    }
+    .newshero-item {
+        position: relative;
+        margin-top: $com-spacing-6;
+        @media (max-width: 999px) {
+            margin-top: $com-spacing-3;
+        }
+        .photo {
+            display: block;
+            position: relative;
+            height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            @media (max-width: 999px) {
+                height: 300px;
+            }
+            &:hover {
+                &::after {
+                    -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 106%, 0);
+                    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 106%, 0)
+                }
+                img {
+                    @include scale(1.15);
+                }
+            }
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, .5);
+                content: '';
+                z-index: 1;
+                -webkit-transition: -webkit-transform .6s;
+                transition: -webkit-transform .6s;
+                -o-transition: transform .6s;
+                transition: transform .6s;
+                transition: transform .6s, -webkit-transform .6s;
+                -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -106%, 0);
+                transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -106%, 0);
+                @media (max-width: 999px) {
+                    display: none;
+                }
+            }
+            img {
+                width: $fullwidth;
+                height: $fullwidth;
+                object-fit: cover;
+                @include transition(all 0.5s ease-in-out 0s);
+            }
+        }
+    }
+    .item {
+        @media (max-width: 999px) {
+            display: grid;
+            gap: $com-spacing-3;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 550px) {
+            gap: $zero;
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .newshero-item {
+            .photo {
+                height: 180px;
+            }
+            .tagtext {
+                border-radius: $zero;
+                padding: $zero;
+                background: $none;
+                margin-top: $com-spacing-2;
+                color: $orange;
+                img {
+                    max-width: 34px;
+                    max-height: 34px;
+                    margin-left: $com-spacing-1;
+                }
+            }
+            .title {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                padding-bottom: $com-spacing-1;
+                font-size: 16px;
+                margin-top: $com-spacing-3;
+                @include transition(all 0.5s ease-in-out 0s);
+                &:hover {
+                    color: $orange;
+                }
+            }
+            .date {
+                display: flex;
+                align-items: center;
+                margin-top: $com-spacing-2;
+                font-weight: 300;
+                font-size: 14px;
+                svg {
+                    margin-left: $com-spacing-1
+                }
+            }
+        }
+    }
+}
+
+//////////////////////// End Slider
+.add-photos__item {
+    background: $ofwhite;
+    .rowbox {
+        display: grid;
+        grid-template-columns: 3fr 310px 310px;
+        gap: $com-spacing-4;
+        @media (max-width: 1199px) {
+            grid-template-columns: 3fr 280px 280px;
+        }
+        @media (max-width: 999px) {
+            grid-template-columns: 1fr;
+            gap: $zero;
+        }
+    }
+    .newshero-item {
+        position: relative;
+        margin-top: $com-spacing-6;
+        @media (max-width: 999px) {
+            margin-top: $com-spacing-3;
+        }
+        .photo {
+            display: block;
+            position: relative;
+            height: 421px;
+            border-radius: 12px;
+            overflow: hidden;
+            @media (max-width: 999px) {
+                // height: 300px;
+            }
+            img {
+                width: $fullwidth;
+                height: $fullwidth;
+                object-fit: cover;
+            }
+            .contant {
+                background: none;
+                bottom: 118px;
+                padding: $com-spacing-6;
+                text-align: center;
+                .title {
+                    text-align: center;
+                    font-size: 32px;
+                    @media (max-width: 999px) {
+                        font-size: 26px;
+                    }
+                }
+                img {
+                    width: 126px;
+                    height: 126px;
+                    object-fit: inherit;
+                }
+            }
+            .sponsored {
+                @include flex;
+                position: absolute;
+                bottom: $zero;
+                left: $zero;
+                color: $white;
+                width: $fullwidth;
+                padding: $com-spacing-4;
+                img {
+                    width: 40px;
+                    height: 40px;
+                    object-fit: inherit;
+                    margin-left: $com-spacing-1;
+                }
+            }
+        }
+    }
+    .item {
+        background: $white;
+        border-radius: 12px;
+        padding: $com-spacing-3;
+        text-align: center;
+        border: 1px solid #ff760b38;
+        @include transition(all 0.5s ease-in-out 0s);
+        margin-top: $com-spacing-6;
+        @media (max-width: 767px) {
+            padding: $com-spacing-3;
+        }
+        &:hover {
+            border: 1px solid $orange;
+            .photo {
+                &::after {
+                    -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 106%, 0);
+                    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 106%, 0)
+                }
+                img {
+                    @include scale(1.15);
+                }
+            }
+        }
+        .photo {
+            position: relative;
+            width: $fullwidth;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, .5);
+                content: '';
+                z-index: 1;
+                -webkit-transition: -webkit-transform .6s;
+                transition: -webkit-transform .6s;
+                -o-transition: transform .6s;
+                transition: transform .6s;
+                transition: transform .6s, -webkit-transform .6s;
+                -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -106%, 0);
+                transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -106%, 0);
+                @media (max-width: 999px) {
+                    display: none;
+                }
+            }
+            img {
+                width: $fullwidth;
+                height: $fullwidth;
+                object-fit: cover;
+                @include transition(all 0.5s ease-in-out 0s);
+            }
+        }
+        .title {
+            font-size: 18px;
+            margin-top: $com-spacing-3;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            margin-top: $com-spacing-1;
+        }
+        .number {
+            display: block;
+            font-size: 26px;
+            font-weight: 600;
+            color: $orange;
+            margin-top: $com-spacing-3;
+        }
+        .bottom {
+            width: $fullwidth;
+            margin-top: $com-spacing-6;
+            border: 1px solid #ff760b38;
+            color: $blak;
+            &:hover {
+                border: 1px solid $orange;
+                color: $white;
+            }
+        }
+    }
+}

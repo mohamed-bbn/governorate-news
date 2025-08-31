@@ -1,0 +1,113 @@
+.scrollTopBtn {
+    @include position(fixed, $right: -100px, $bottom: $com-spacing-3);
+    @include flex;
+    width: 44px;
+    height: 44px;
+    border: $zero;
+    z-index: 998;
+    border-radius: 5px;
+    background: $orange;
+    cursor: pointer;
+    opacity: 0;
+    @include transition(all 0.5s ease-in-out 0s);
+    @media (max-width: 999px) {
+        display: $none;
+    }
+    &.show {
+        right: $com-spacing-3;
+        opacity: 1;
+    }
+    &:hover {
+        background: $blue;
+    }
+    svg {
+        @include rotate(90deg);
+        width: 15px;
+        height: 15px;
+        path {
+            fill: $white;
+        }
+    }
+}
+
+.footer {
+    position: relative;
+    width: $fullwidth;
+    background: $dark;
+    padding-top: $com-spacing-7;
+    .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width: 999px) {
+            display: block;
+        }
+        .logo {
+            @media (max-width: 999px) {
+                width: $fullwidth;
+                text-align: center;
+            }
+            img {
+                max-width: 100px;
+                @media (max-width: 999px) {}
+            }
+        }
+        .navmenu {
+            display: flex;
+            @media (max-width: 999px) {
+                justify-content: center;
+                margin: $com-spacing-4 $zero;
+            }
+            @media (max-width: 767px) {
+                display: block;
+            }
+            a {
+                @include hyprlink;
+                @media (max-width: 999px) {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .copyright {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: $fullwidth;
+        padding: $com-spacing-4 $zero;
+        border-top: 1px solid #ffffff42;
+        margin-top: $com-spacing-6;
+        @media (max-width: 767px) {
+            display: block;
+        }
+        .app-icons {
+            display: flex;
+            align-items: center;
+            @media (max-width: 999px) {
+                justify-content: center;
+            }
+            a {
+                display: block;
+                margin-left: $com-spacing-4;
+                &:last-child {
+                    margin: $zero;
+                }
+                @media (max-width: 999px) {
+                    margin: $zero $com-spacing-1;
+                }
+            }
+            img {
+                min-width: 104px;
+                max-width: 104px;
+                height: 34px;
+            }
+        }
+        p {
+            color: $white;
+            @media (max-width: 767px) {
+                text-align: center;
+                margin-top: $com-spacing-3;
+            }
+        }
+    }
+}
