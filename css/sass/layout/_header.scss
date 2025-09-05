@@ -284,8 +284,10 @@
             &-item {
                 position: relative;
                 display: inline-block;
-                margin-left: $com-spacing-6;
-                @media (max-width: 999px) {}
+                margin-left: $com-spacing-7;
+                @media (max-width: 1199px) {
+                    margin-left: $com-spacing-6;
+                }
                 &:last-child {
                     margin: $zero;
                 }
@@ -443,7 +445,7 @@
         .weather {
             display: flex;
             align-items: center;
-            @media (max-width: 1199px) {
+            @media (max-width: 999px) {
                 display: none;
             }
             li {

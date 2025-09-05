@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .header {
   position: relative;
   width: 100%;
@@ -249,7 +250,10 @@
       .header .site-menu .menu-item {
         position: relative;
         display: inline-block;
-        margin-left: 24px; }
+        margin-left: 32px; }
+        @media (max-width: 1199px) {
+          .header .site-menu .menu-item {
+            margin-left: 24px; } }
         .header .site-menu .menu-item:last-child {
           margin: 0px; }
       .header .site-menu .menu-link {
@@ -379,7 +383,7 @@
     .header .site-menu .weather {
       display: flex;
       align-items: center; }
-      @media (max-width: 1199px) {
+      @media (max-width: 999px) {
         .header .site-menu .weather {
           display: none; } }
       .header .site-menu .weather li {
@@ -731,6 +735,172 @@
       .add-photos__item .item .bottom:hover {
         border: 1px solid #ff6700;
         color: #fff; }
+
+.complaints-suggestions {
+  background: #FFFAF7; }
+  .complaints-suggestions .inner {
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    border-radius: 30px;
+    background: #fff;
+    border: 1px solid #ff760b38;
+    overflow: hidden; }
+    @media (max-width: 1199px) {
+      .complaints-suggestions .inner {
+        grid-template-columns: 250px 1fr; } }
+    @media (max-width: 999px) {
+      .complaints-suggestions .inner {
+        grid-template-columns: 1fr; } }
+  .complaints-suggestions .photo {
+    background: #03045e;
+    overflow: hidden; }
+    @media (max-width: 999px) {
+      .complaints-suggestions .photo {
+        display: none; } }
+    .complaints-suggestions .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+  .complaints-suggestions p {
+    margin-top: 8px; }
+  @media (max-width: 999px) {
+    .complaints-suggestions .p-5 {
+      padding: 24px !important; } }
+  .complaints-suggestions .field {
+    position: relative;
+    margin-top: 24px; }
+    .complaints-suggestions .field .icon {
+      position: absolute;
+      left: 12px;
+      top: 8px; }
+      .complaints-suggestions .field .icon svg {
+        width: 24px;
+        height: 24px; }
+    .complaints-suggestions .field .forlabel {
+      margin-bottom: 8px; }
+      .complaints-suggestions .field .forlabel small {
+        color: #BD3C2F; }
+    .complaints-suggestions .field .custom-file-input {
+      display: none; }
+    .complaints-suggestions .field .custom-file-label,
+    .complaints-suggestions .field .custom-file-input {
+      right: 12px;
+      width: 100%;
+      outline: 0px !important;
+      height: 48px;
+      border: 1px solid #dee2e6;
+      background: #fff;
+      -webkit-border-radius: 0.375rem;
+      border-radius: 0.375rem;
+      background-clip: padding-box;
+      color: #000; }
+    .complaints-suggestions .field .custom-file-input:focus ~ .custom-file-label {
+      border-color: #ff6700 !important; }
+    .complaints-suggestions .field .custom-file-label {
+      display: flex;
+      align-items: center;
+      margin: 0px;
+      padding-right: 122px;
+      box-shadow: none !important;
+      outline: 0 !important;
+      outline-style: none !important;
+      font-weight: 300;
+      color: #3B3B3B;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+    .complaints-suggestions .field .custom-file-input:lang(en) ~ .custom-file-label::after {
+      content: "تحميل المرفقات";
+      position: absolute;
+      right: .75rem;
+      background: none;
+      height: 48px;
+      border: 0px;
+      padding: 0px;
+      display: flex;
+      align-items: center; }
+  .complaints-suggestions .bottom {
+    min-width: 180px;
+    height: 48px;
+    background: #ff6700;
+    color: #fff; }
+    .complaints-suggestions .bottom:hover {
+      background: #03045e;
+      border: 1px solid #03045e; }
+
+.channel__item {
+  background: #FFFAF7; }
+  .channel__item .rowbox {
+    display: grid;
+    grid-template-columns: 3fr 310px 310px;
+    gap: 16px;
+    margin-top: 12px; }
+    @media (max-width: 1199px) {
+      .channel__item .rowbox {
+        grid-template-columns: 3fr 280px 280px; } }
+    @media (max-width: 999px) {
+      .channel__item .rowbox {
+        grid-template-columns: 1fr;
+        gap: 0px; } }
+  .channel__item .newshero-item {
+    position: relative;
+    margin-top: 16px; }
+    @media (max-width: 999px) {
+      .channel__item .newshero-item {
+        margin-top: 12px; } }
+    .channel__item .newshero-item .photo {
+      display: block;
+      position: relative;
+      height: 436px;
+      border-radius: 12px;
+      overflow: hidden; }
+      @media (max-width: 999px) {
+        .channel__item .newshero-item .photo {
+          height: 300px; } }
+      .channel__item .newshero-item .photo:hover img {
+        -webkit-transform: scale(1.15);
+        -moz-transform: scale(1.15);
+        -ms-transform: scale(1.15);
+        -o-transform: scale(1.15);
+        transform: scale(1.15); }
+      .channel__item .newshero-item .photo i.icon-play {
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        left: 0px;
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px auto;
+        z-index: 1;
+        background: #ff10108c;
+        border-radius: 12px;
+        margin-top: -32px;
+        -moz-transition: all 0.5s ease-in-out 0s;
+        -o-transition: all 0.5s ease-in-out 0s;
+        -webkit-transition: all 0.5s ease-in-out 0s;
+        transition: all 0.5s ease-in-out 0s; }
+      .channel__item .newshero-item .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        -moz-transition: all 0.5s ease-in-out 0s;
+        -o-transition: all 0.5s ease-in-out 0s;
+        -webkit-transition: all 0.5s ease-in-out 0s;
+        transition: all 0.5s ease-in-out 0s; }
+  @media (max-width: 999px) {
+    .channel__item .item {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 550px) {
+    .channel__item .item {
+      gap: 0px;
+      grid-template-columns: repeat(1, 1fr); } }
+  .channel__item .item .newshero-item .photo {
+    height: 210px; }
 
 body,
 h1,

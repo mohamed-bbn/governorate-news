@@ -1947,10 +1947,10 @@ progress {
 
 .table>:not(caption)>*>* {
     padding: .5rem .5rem;
-    color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color)));
+    /* color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color)));
     background-color: var(--bs-table-bg);
     border-bottom-width: var(--bs-border-width);
-    box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg)))
+    box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg))) */
 }
 
 .table>tbody {
@@ -1989,7 +1989,8 @@ progress {
     border-top-width: 0
 }
 
-.table-striped>tbody>tr:nth-of-type(odd)>* {
+
+/* .table-striped>tbody>tr:nth-of-type(odd)>* {
     --bs-table-color-type: var(--bs-table-striped-color);
     --bs-table-bg-type: var(--bs-table-striped-bg)
 }
@@ -2007,7 +2008,7 @@ progress {
 .table-hover>tbody>tr:hover>* {
     --bs-table-color-state: var(--bs-table-hover-color);
     --bs-table-bg-state: var(--bs-table-hover-bg)
-}
+} */
 
 .table-primary {
     --bs-table-color: #000;

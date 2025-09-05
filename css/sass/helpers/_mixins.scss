@@ -206,7 +206,7 @@
 @mixin hyprlink {
     display: block;
     @include position(relative);
-    margin: $zero $com-spacing-2;
+    margin: $zero $com-spacing-4;
     color: $white;
     @include transition(all 0.5s ease-in-out 0s);
     &:hover {
@@ -235,6 +235,23 @@
         @include overlay;
         background: linear-gradient(180deg, #03045e85 0%, #0a0b3c94 100%);
         z-index: 1;
+    }
+    &.non-befor {
+        &:before {
+            display: none;
+        }
+    }
+    .listaction {
+        @include flex;
+        flex-wrap: wrap;
+        margin-top: $com-spacing-3;
+        .bottom {
+            margin: $com-spacing-2 $com-spacing-1 $zero $com-spacing-1;
+            &:hover {
+                background: $dark;
+                border: 1px solid $dark;
+            }
+        }
     }
     .container {
         text-align: center;
