@@ -238,12 +238,12 @@
             padding: $com-spacing-3;
         }
         &:hover {
-            border: 1px solid $orange;
+            // border: 1px solid $orange;
             .photo {
-                &::after {
-                    -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 106%, 0);
-                    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 106%, 0)
-                }
+                // &::after {
+                //     -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 106%, 0);
+                //     transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 106%, 0)
+                // }
                 img {
                     @include scale(1.15);
                 }
@@ -255,26 +255,26 @@
             height: 220px;
             border-radius: 12px;
             overflow: hidden;
-            &::after {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(255, 255, 255, .5);
-                content: '';
-                z-index: 1;
-                -webkit-transition: -webkit-transform .6s;
-                transition: -webkit-transform .6s;
-                -o-transition: transform .6s;
-                transition: transform .6s;
-                transition: transform .6s, -webkit-transform .6s;
-                -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -106%, 0);
-                transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -106%, 0);
-                @media (max-width: 999px) {
-                    display: none;
-                }
-            }
+            // &::after {
+            //     position: absolute;
+            //     top: 0;
+            //     left: 0;
+            //     width: 100%;
+            //     height: 100%;
+            //     background: rgba(255, 255, 255, .5);
+            //     content: '';
+            //     z-index: 1;
+            //     -webkit-transition: -webkit-transform .6s;
+            //     transition: -webkit-transform .6s;
+            //     -o-transition: transform .6s;
+            //     transition: transform .6s;
+            //     transition: transform .6s, -webkit-transform .6s;
+            //     -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -106%, 0);
+            //     transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -106%, 0);
+            //     @media (max-width: 999px) {
+            //         display: none;
+            //     }
+            // }
             img {
                 width: $fullwidth;
                 height: $fullwidth;
@@ -304,9 +304,33 @@
             border: 1px solid #ff760b38;
             color: $blak;
             &:hover {
-                border: 1px solid $orange;
+                // border: 1px solid $orange;
                 color: $white;
             }
+        }
+        .vote-btn:active {
+            transform: translateY(1px);
+        }
+        /* حالة بعد التصويت */
+        .vote-btn.voted {
+            position: relative;
+            background: #f8640036;
+            color: $orange;
+            cursor: default;
+            pointer-events: none;
+        }
+        .vote-btn.voted::before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-left: 6px;
+        }
+        .vote-btn .text {
+            display: inline-block;
+            transition: opacity .18s, transform .18s;
+        }
+        .vote-btn.voting .text {
+            opacity: 0.3;
+            transform: translateY(-4px);
         }
     }
 }

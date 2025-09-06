@@ -665,46 +665,23 @@
     -o-transition: all 0.5s ease-in-out 0s;
     -webkit-transition: all 0.5s ease-in-out 0s;
     transition: all 0.5s ease-in-out 0s;
-    margin-top: 24px; }
+    margin-top: 24px;
+    /* حالة بعد التصويت */ }
     @media (max-width: 767px) {
       .add-photos__item .item {
         padding: 12px; } }
-    .add-photos__item .item:hover {
-      border: 1px solid #ff6700; }
-      .add-photos__item .item:hover .photo::after {
-        -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 106%, 0);
-        transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 106%, 0); }
-      .add-photos__item .item:hover .photo img {
-        -webkit-transform: scale(1.15);
-        -moz-transform: scale(1.15);
-        -ms-transform: scale(1.15);
-        -o-transform: scale(1.15);
-        transform: scale(1.15); }
+    .add-photos__item .item:hover .photo img {
+      -webkit-transform: scale(1.15);
+      -moz-transform: scale(1.15);
+      -ms-transform: scale(1.15);
+      -o-transform: scale(1.15);
+      transform: scale(1.15); }
     .add-photos__item .item .photo {
       position: relative;
       width: 100%;
       height: 220px;
       border-radius: 12px;
       overflow: hidden; }
-      .add-photos__item .item .photo::after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.5);
-        content: '';
-        z-index: 1;
-        -webkit-transition: -webkit-transform .6s;
-        transition: -webkit-transform .6s;
-        -o-transition: transform .6s;
-        transition: transform .6s;
-        transition: transform .6s, -webkit-transform .6s;
-        -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -106%, 0);
-        transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -106%, 0); }
-        @media (max-width: 999px) {
-          .add-photos__item .item .photo::after {
-            display: none; } }
       .add-photos__item .item .photo img {
         width: 100%;
         height: 100%;
@@ -732,8 +709,25 @@
       border: 1px solid #ff760b38;
       color: #000; }
       .add-photos__item .item .bottom:hover {
-        border: 1px solid #ff6700;
         color: #fff; }
+    .add-photos__item .item .vote-btn:active {
+      transform: translateY(1px); }
+    .add-photos__item .item .vote-btn.voted {
+      position: relative;
+      background: #f8640036;
+      color: #ff6700;
+      cursor: default;
+      pointer-events: none; }
+    .add-photos__item .item .vote-btn.voted::before {
+      content: "✓ ";
+      font-weight: bold;
+      margin-left: 6px; }
+    .add-photos__item .item .vote-btn .text {
+      display: inline-block;
+      transition: opacity .18s, transform .18s; }
+    .add-photos__item .item .vote-btn.voting .text {
+      opacity: 0.3;
+      transform: translateY(-4px); }
 
 .complaints-suggestions {
   background: #FFFAF7; }

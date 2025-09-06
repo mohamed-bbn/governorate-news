@@ -445,3 +445,58 @@
     //     }
     // }
 }
+
+@mixin slidercarousel {
+    overflow: hidden;
+    &:hover {
+        .carousel-control-next {
+            right: $com-spacing-6;
+        }
+        .carousel-control-prev {
+            left: $com-spacing-6;
+        }
+    }
+    .carousel-item {
+        height: 70vh;
+        overflow: hidden;
+        @media (max-width: 767px) {
+            height: 400px;
+        }
+        img {
+            width: $fullwidth;
+            height: $fullwidth;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: 38px;
+        height: 38px;
+        top: 50%;
+        opacity: 1;
+        margin-top: -19px;
+        background: #00000078;
+        border-radius: 50%;
+        @include transition(all 0.5s ease-in-out 0s);
+        @media (max-width: 767px) {}
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: $white;
+            @include transition(all 0.5s ease-in-out 0s);
+        }
+        &:hover {
+            background: $orange;
+        }
+    }
+    .carousel-control-next {
+        right: -90px;
+    }
+    .carousel-control-prev {
+        left: -90px;
+        svg {
+            @include rotate(180deg);
+        }
+    }
+}
