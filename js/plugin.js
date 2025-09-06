@@ -162,6 +162,22 @@ $(window).on("load", function() {
         ]
     });
 
+    initializeSlider(".slider-offers", {
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+            { breakpoint: 999, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+            { breakpoint: 767, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+        ]
+    });
+
+
+
 
 
     $(window).scroll(function() {
@@ -222,6 +238,24 @@ $(window).on("load", function() {
 
     });
 
+    $("#logoUpload").on("change", function() {
+        let file = this.files[0];
+        if (file) {
+            $(".file-name").text(file.name);
+            $(".remove-file").show();
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                $("#previewImage").attr("src", e.target.result).show();
+            }
+            reader.readAsDataURL(file);
+        }
+    });
 
+    $(".remove-file").on("click", function() {
+        $("#logoUpload").val(""); //        
+        $(".file-name").text("لم يتم اختيار ملف");
+        $("#previewImage").hide().attr("src", "");
+        $(this).hide();
+    });
 
 });

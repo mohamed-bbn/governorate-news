@@ -592,7 +592,6 @@
   display: flex;
   align-items: center;
   margin-top: 8px;
-  font-weight: 300;
   font-size: 14px; }
   .slider-news__item .item .newshero-item .date svg {
     margin-left: 4px; }
@@ -875,7 +874,7 @@
         justify-content: center;
         margin: 0px auto;
         z-index: 1;
-        background: #ff10108c;
+        background: #ff67006e;
         border-radius: 12px;
         margin-top: -32px;
         -moz-transition: all 0.5s ease-in-out 0s;
@@ -901,6 +900,177 @@
       grid-template-columns: repeat(1, 1fr); } }
   .channel__item .item .newshero-item .photo {
     height: 210px; }
+
+.dawawis__edit,
+.dawawis__add {
+  background: #FFFAF7; }
+  .dawawis__edit::before,
+  .dawawis__add::before {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 140px;
+    height: 100%;
+    background: url(../images/bg2.png) no-repeat center center/cover;
+    z-index: 2; }
+    @media (max-width: 999px) {
+      .dawawis__edit::before,
+      .dawawis__add::before {
+        width: 100px; } }
+  .dawawis__edit .container,
+  .dawawis__add .container {
+    z-index: 10; }
+  .dawawis__edit .note,
+  .dawawis__add .note {
+    font-weight: 300;
+    margin-top: 24px; }
+    .dawawis__edit .note span,
+    .dawawis__add .note span {
+      display: block;
+      color: #ff6700;
+      font-size: 20px; }
+  .dawawis__edit .field,
+  .dawawis__add .field {
+    position: relative;
+    margin-top: 24px; }
+    .dawawis__edit .field .icon,
+    .dawawis__add .field .icon {
+      position: absolute;
+      left: 12px;
+      top: 8px; }
+      .dawawis__edit .field .icon svg,
+      .dawawis__add .field .icon svg {
+        width: 24px;
+        height: 24px; }
+    .dawawis__edit .field .forlabel,
+    .dawawis__add .field .forlabel {
+      margin-bottom: 8px; }
+      .dawawis__edit .field .forlabel small,
+      .dawawis__add .field .forlabel small {
+        color: #BD3C2F; }
+    .dawawis__edit .field .upload-btn,
+    .dawawis__add .field .upload-btn {
+      color: #000;
+      font-size: 20px;
+      cursor: pointer;
+      text-align: center; }
+    .dawawis__edit .field div.form-control,
+    .dawawis__add .field div.form-control {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 220px;
+      overflow: hidden; }
+    .dawawis__edit .field input[type="file"],
+    .dawawis__add .field input[type="file"] {
+      display: none; }
+    .dawawis__edit .field .file-info,
+    .dawawis__add .field .file-info {
+      text-align: center; }
+      .dawawis__edit .field .file-info svg,
+      .dawawis__add .field .file-info svg {
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: 0px auto 12px auto; }
+    .dawawis__edit .field .file-name,
+    .dawawis__add .field .file-name {
+      display: block;
+      margin-top: 4px; }
+    .dawawis__edit .field .remove-file,
+    .dawawis__add .field .remove-file {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      background: #BD3C2F;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      z-index: 2; }
+    .dawawis__edit .field img.preview,
+    .dawawis__add .field img.preview {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top; }
+  .dawawis__edit .bottom,
+  .dawawis__add .bottom {
+    min-width: 180px;
+    height: 48px;
+    background: #ff6700;
+    color: #fff; }
+    .dawawis__edit .bottom:hover,
+    .dawawis__add .bottom:hover {
+      background: #03045e;
+      border: 1px solid #03045e; }
+
+.dawawis__removal {
+  background: #FFFAF7;
+  min-height: 700px; }
+  @media (max-width: 999px) {
+    .dawawis__removal {
+      min-height: inherit; } }
+  .dawawis__removal::before {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 140px;
+    height: 100%;
+    background: url(../images/bg2.png) no-repeat center center/cover;
+    z-index: 2; }
+    @media (max-width: 999px) {
+      .dawawis__removal::before {
+        width: 100px; } }
+  .dawawis__removal .container {
+    z-index: 10; }
+  .dawawis__removal .color {
+    color: #ff6700; }
+  .dawawis__removal .rowbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: flex-start;
+    z-index: 3; }
+    @media (max-width: 999px) {
+      .dawawis__removal .rowbox {
+        grid-template-columns: 1fr;
+        gap: 12px; } }
+  .dawawis__removal .item {
+    margin-top: 24px; }
+    .dawawis__removal .item .text {
+      margin-top: 24px; }
+      .dawawis__removal .item .text li {
+        margin-top: 12px;
+        font-size: 18px;
+        color: #000; }
+    .dawawis__removal .item .field {
+      position: relative; }
+      .dawawis__removal .item .field .forlabel {
+        margin-bottom: 8px; }
+        .dawawis__removal .item .field .forlabel small {
+          color: #BD3C2F; }
+    .dawawis__removal .item .bottom {
+      min-width: 100%;
+      height: 48px;
+      background: #ff6700;
+      color: #fff;
+      margin-top: 24px; }
+      .dawawis__removal .item .bottom:hover {
+        background: #03045e;
+        border: 1px solid #03045e; }
 
 body,
 h1,

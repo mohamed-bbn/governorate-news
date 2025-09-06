@@ -79,7 +79,6 @@
             @include flex;
             color: #646363;
             margin-top: $com-spacing-2;
-            font-weight: 300;
             font-size: 14px;
             svg {
                 margin-left: $com-spacing-1
@@ -299,7 +298,6 @@
             align-items: center;
             color: #646363;
             margin-top: $com-spacing-2;
-            font-weight: 300;
             font-size: 14px;
             svg {
                 margin-left: $com-spacing-1
@@ -453,7 +451,6 @@
         align-items: center;
         color: #646363;
         margin-top: $com-spacing-3;
-        font-weight: 300;
         font-size: 14px;
         svg {
             margin-left: $com-spacing-1
@@ -461,7 +458,8 @@
     }
 }
 
-.capital-governorate {
+.capital-governorate,
+.offers-news {
     overflow: inherit;
     .container {
         display: grid;
@@ -491,7 +489,6 @@
             align-items: center;
             color: #646363;
             margin-top: $com-spacing-2;
-            font-weight: 300;
             font-size: 14px;
             svg {
                 margin-left: $com-spacing-1
@@ -503,6 +500,7 @@
             img {
                 width: 50px;
                 height: 50px;
+                border-radius: 50%;
                 margin-left: $com-spacing-2;
             }
             p {
@@ -642,6 +640,15 @@
     }
 }
 
+.offers-news {
+    .item {
+        &:last-child {
+            position: sticky;
+            top: 100px;
+        }
+    }
+}
+
 .newscapital__item {
     // background: $ofwhite;
     .rowbox {
@@ -728,7 +735,6 @@
             @include flex;
             color: #646363;
             margin-top: $com-spacing-2;
-            font-weight: 300;
             font-size: 14px;
             svg {
                 margin-left: $com-spacing-1
@@ -1084,7 +1090,6 @@
                 align-items: center;
                 color: #646363;
                 margin-top: $com-spacing-2;
-                font-weight: 300;
                 font-size: 14px;
                 svg {
                     margin-left: $com-spacing-1
@@ -1378,6 +1383,9 @@
 }
 
 .channelpage__item {
+    &.bgvid {
+        background: $ofwhite;
+    }
     .rowbox {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -1425,7 +1433,7 @@
                 justify-content: center;
                 margin: 0px auto;
                 z-index: 1;
-                background: #ff10108c;
+                background: #ff67006e;
                 border-radius: 12px;
                 margin-top: -32px;
                 @include transition(all 0.5s ease-in-out 0s);
@@ -1449,6 +1457,135 @@
             &:hover {
                 color: $orange;
             }
+        }
+    }
+    .view-video {
+        margin: $zero $auto;
+        max-width: 80%;
+        @media (max-width: 999px) {
+            max-width: $fullwidth;
+        }
+        nav {
+            a {
+                display: flex;
+                align-items: center;
+                background: $white;
+                border-radius: 12px;
+                padding: $com-spacing-2;
+                border: 1px solid #ff760b38;
+                @include transition(all 0.5s ease-in-out 0s);
+                margin-top: $com-spacing-3;
+                @media (max-width: 767px) {}
+                &:hover {
+                    border: 1px solid $orange;
+                }
+            }
+        }
+        .date {
+            display: flex;
+            align-items: center;
+            color: #646363;
+            margin-top: $com-spacing-2;
+            font-size: 14px;
+            svg {
+                margin-left: $com-spacing-1
+            }
+        }
+        .item-video {
+            width: $fullwidth;
+            height: 500px;
+            background: $dark;
+            border-radius: 12px;
+            overflow: hidden;
+            @media (max-width: 999px) {
+                height: 320px;
+            }
+            iframe,
+            video {
+                display: block;
+                border: $zero;
+                width: $fullwidth;
+                height: $fullwidth;
+            }
+        }
+    }
+}
+
+.slideroffers__item {
+    background: $ofwhite;
+    .slider-offers {
+        @include styleslider;
+        @media (max-width: 999px) {}
+        .slick-prev, .slick-next {
+            display: none !important;
+        }
+    }
+    .item {
+        direction: rtl;
+        display: inline-block;
+        height: 460px;
+        border-radius: 12px;
+        margin: $zero $com-spacing-2;
+        cursor: pointer;
+        overflow: hidden;
+        @media (max-width: 999px) {
+            height: 300px;
+        }
+        img {
+            width: $fullwidth;
+            height: $fullwidth;
+            object-fit: cover;
+        }
+    }
+}
+
+.association__item {
+    .rowbox {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: $com-spacing-4;
+        margin-top: $com-spacing-6;
+        @media (max-width: 999px) {
+            grid-template-columns: 1fr 1fr;
+            gap: $com-spacing-3;
+            margin-top: $com-spacing-3;
+        }
+        @media (max-width: 550px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    .item {
+        padding: $com-spacing-5;
+        background: $ofwhite;
+        border-radius: 12px;
+        border: 1px solid #ff760b38;
+        @include transition(all 0.5s ease-in-out 0s);
+        &:hover {
+            border: 1px solid $orange;
+        }
+        .photo {
+            @include flex;
+            position: relative;
+            background: $white;
+            padding: $com-spacing-2;
+            margin: $zero $auto;
+            width: 136px;
+            height: 136px;
+            overflow: hidden;
+            @include prefixer (box-shadow, 4px 4px 20px #00000014, webkit moz o ms);
+            border-radius: 50%;
+            img {
+                max-width: $fullwidth;
+                max-height: $fullwidth;
+                border-radius: 50%;
+            }
+        }
+        p {
+            display: block;
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+            margin-top: $com-spacing-5
         }
     }
 }

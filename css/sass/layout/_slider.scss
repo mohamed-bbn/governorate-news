@@ -147,7 +147,6 @@
                 display: flex;
                 align-items: center;
                 margin-top: $com-spacing-2;
-                font-weight: 300;
                 font-size: 14px;
                 svg {
                     margin-left: $com-spacing-1
@@ -471,7 +470,7 @@
                 justify-content: center;
                 margin: 0px auto;
                 z-index: 1;
-                background: #ff10108c;
+                background: #ff67006e;
                 border-radius: 12px;
                 margin-top: -32px;
                 @include transition(all 0.5s ease-in-out 0s);
@@ -497,6 +496,187 @@
         .newshero-item {
             .photo {
                 height: 210px;
+            }
+        }
+    }
+}
+
+.dawawis__edit,
+.dawawis__add {
+    background: $ofwhite;
+    &::before {
+        content: "";
+        position: absolute;
+        right: $zero;
+        top: $zero;
+        width: 140px;
+        height: $fullwidth;
+        background: url(../images/bg2.png) no-repeat center center/cover;
+        z-index: 2;
+        @media (max-width: 999px) {
+            width: 100px;
+        }
+    }
+    .container {
+        z-index: 10;
+    }
+    .note {
+        font-weight: 300;
+        margin-top: $com-spacing-6;
+        span {
+            display: block;
+            color: $orange;
+            font-size: 20px;
+        }
+    }
+    .field {
+        position: relative;
+        margin-top: $com-spacing-6;
+        .icon {
+            position: absolute;
+            left: $com-spacing-3;
+            top: $com-spacing-2;
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        .forlabel {
+            margin-bottom: $com-spacing-2;
+            small {
+                color: $red;
+            }
+        }
+        .upload-btn {
+            color: $blak;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center
+        }
+        div.form-control {
+            position: relative;
+            @include flex;
+            height: 220px;
+            overflow: hidden;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .file-info {
+            text-align: center;
+            svg {
+                display: block;
+                width: 40px;
+                height: 40px;
+                margin: $zero $auto $com-spacing-3 $auto;
+            }
+        }
+        .file-name {
+            display: block;
+            margin-top: $com-spacing-1;
+        }
+        .remove-file {
+            @include flex;
+            position: absolute;
+            left: $com-spacing-4;
+            top: $com-spacing-4;
+            background: $red;
+            color: $white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            z-index: 2;
+        }
+        img.preview {
+            position: absolute;
+            left: $zero;
+            top: $zero;
+            display: block;
+            width: $fullwidth;
+            height: $fullwidth;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+    .bottom {
+        min-width: 180px;
+        height: 48px;
+        background: $orange;
+        color: $white;
+        &:hover {
+            background: $dark;
+            border: 1px solid $dark;
+        }
+    }
+}
+
+.dawawis__removal {
+    background: $ofwhite;
+    min-height: 700px;
+    @media (max-width: 999px) {
+        min-height: inherit;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        right: $zero;
+        top: $zero;
+        width: 140px;
+        height: $fullwidth;
+        background: url(../images/bg2.png) no-repeat center center/cover;
+        z-index: 2;
+        @media (max-width: 999px) {
+            width: 100px;
+        }
+    }
+    .container {
+        z-index: 10;
+    }
+    .color {
+        color: $orange;
+    }
+    .rowbox {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $com-spacing-8;
+        align-items: flex-start;
+        z-index: 3;
+        @media (max-width: 999px) {
+            grid-template-columns: 1fr;
+            gap: $com-spacing-3;
+        }
+    }
+    .item {
+        margin-top: $com-spacing-6;
+        @media (max-width: 999px) {}
+        .text {
+            margin-top: $com-spacing-6;
+            li {
+                margin-top: $com-spacing-3;
+                font-size: 18px;
+                color: $blak;
+            }
+        }
+        .field {
+            position: relative;
+            .forlabel {
+                margin-bottom: $com-spacing-2;
+                small {
+                    color: $red;
+                }
+            }
+        }
+        .bottom {
+            min-width: $fullwidth;
+            height: 48px;
+            background: $orange;
+            color: $white;
+            margin-top: $com-spacing-6;
+            &:hover {
+                background: $dark;
+                border: 1px solid $dark;
             }
         }
     }

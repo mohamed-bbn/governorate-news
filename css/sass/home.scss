@@ -270,6 +270,17 @@ select.form-control {
     @media (max-width: 767px) {
         flex-wrap: wrap;
     }
+    .title {
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: $com-spacing-2;
+        }
+    }
+    select.form-control {
+        max-width: 200px;
+    }
     .social {
         margin-top: $com-spacing-3;
         a {
