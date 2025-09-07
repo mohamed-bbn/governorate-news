@@ -294,6 +294,17 @@ select.form-control {
             }
         }
     }
+    .flexselect {
+        display: flex;
+        flex-wrap: wrap;
+        select.form-control {
+            min-width: 200px;
+            margin-left: $com-spacing-3;
+            &:last-child {
+                margin-left: $zero;
+            }
+        }
+    }
 }
 
 .slider-loader {

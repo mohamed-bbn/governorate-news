@@ -176,6 +176,35 @@ $(window).on("load", function() {
         ]
     });
 
+    initializeSlider(".share-slider", {
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+            { breakpoint: 999, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+            { breakpoint: 767, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+        ]
+    });
+
+
+
+    initializeSlider(".shepherds-slider", {
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+            { breakpoint: 999, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+            { breakpoint: 767, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+        ]
+    });
 
 
 
@@ -261,20 +290,14 @@ $(window).on("load", function() {
     $(document).on('click', '.vote-btn', function(e) {
         const $btn = $(this);
 
-        // لو عايز تمنع التصويت المتكرر
         if ($btn.hasClass('voted')) return;
 
-        // لو عايز تأثير تحميل قصير:
         $btn.addClass('voting');
 
-        // محاكاة طلب سيرفر (لو عندك API بتبعته) — هنا مولف مؤقت
         setTimeout(function() {
             $btn.removeClass('voting').addClass('voted');
-            // تغيّر النص لتم التصويت
             $btn.html('<span class="text">تم التصويت</span>');
-            // لو عايز تخزن حالة التصويت محلياً:
-            // $btn.data('voted', true);
-        }, 300); // 300ms مؤقت، عدله أو استبدله بطلب AJAX حقيقي
+        }, 300);
     });
 
 });

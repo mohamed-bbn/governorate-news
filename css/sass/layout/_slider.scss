@@ -308,31 +308,35 @@
                 color: $white;
             }
         }
-        .vote-btn:active {
-            transform: translateY(1px);
-        }
-        /* حالة بعد التصويت */
-        .vote-btn.voted {
-            position: relative;
-            background: #f8640036;
-            color: $orange;
-            cursor: default;
-            pointer-events: none;
-        }
-        .vote-btn.voted::before {
-            content: "✓ ";
-            font-weight: bold;
-            margin-left: 6px;
-        }
-        .vote-btn .text {
-            display: inline-block;
-            transition: opacity .18s, transform .18s;
-        }
-        .vote-btn.voting .text {
-            opacity: 0.3;
-            transform: translateY(-4px);
-        }
     }
+}
+
+.vote-btn:active {
+    transform: translateY(1px);
+}
+
+.vote-btn.voted {
+    position: relative;
+    background: #f8640036;
+    color: $orange;
+    cursor: default;
+    pointer-events: none;
+}
+
+.vote-btn.voted::before {
+    content: "✓ ";
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+.vote-btn .text {
+    display: inline-block;
+    transition: opacity .18s, transform .18s;
+}
+
+.vote-btn.voting .text {
+    opacity: 0.3;
+    transform: translateY(-4px);
 }
 
 .complaints-suggestions {

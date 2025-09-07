@@ -314,7 +314,7 @@
         display: $block;
         overflow: hidden;
         outline: $none;
-        margin: $zero -4px;
+        margin: $zero -8px;
         .slick-track {
             @include position(relative, $top: 0, $left: auto, $right: auto, $bottom: auto);
             display: $block;
